@@ -1,0 +1,10 @@
+com/demo/spring/security/api/repository/RoleRepository.class
+com/demo/spring/security/api/SpringSecurityJpaApplication.class
+com/demo/spring/security/api/config/SecurityConfig.class
+com/demo/spring/security/api/service/CustomUserDetailsService.class
+com/demo/spring/security/api/service/CustomUserDetails.class
+com/demo/spring/security/api/repository/UserRepository.class
+com/demo/spring/security/api/model/Role.class
+com/demo/spring/security/api/controller/ApplicationController.class
+com/demo/spring/security/api/controller/AdminController.class
+com/demo/spring/security/api/model/User.class

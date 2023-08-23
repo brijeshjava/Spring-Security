@@ -1,0 +1,10 @@
+/home/brijesh/Downloads/spring-security-jpa-master/src/main/java/com/demo/spring/security/api/service/CustomUserDetailsService.java
+/home/brijesh/Downloads/spring-security-jpa-master/src/main/java/com/demo/spring/security/api/config/SecurityConfig.java
+/home/brijesh/Downloads/spring-security-jpa-master/src/main/java/com/demo/spring/security/api/controller/AdminController.java
+/home/brijesh/Downloads/spring-security-jpa-master/src/main/java/com/demo/spring/security/api/service/CustomUserDetails.java
+/home/brijesh/Downloads/spring-security-jpa-master/src/main/java/com/demo/spring/security/api/controller/ApplicationController.java
+/home/brijesh/Downloads/spring-security-jpa-master/src/main/java/com/demo/spring/security/api/repository/UserRepository.java
+/home/brijesh/Downloads/spring-security-jpa-master/src/main/java/com/demo/spring/security/api/repository/RoleRepository.java
+/home/brijesh/Downloads/spring-security-jpa-master/src/main/java/com/demo/spring/security/api/model/User.java
+/home/brijesh/Downloads/spring-security-jpa-master/src/main/java/com/demo/spring/security/api/SpringSecurityJpaApplication.java
+/home/brijesh/Downloads/spring-security-jpa-master/src/main/java/com/demo/spring/security/api/model/Role.java
