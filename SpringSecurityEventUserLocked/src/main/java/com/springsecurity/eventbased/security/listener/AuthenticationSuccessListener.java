@@ -1,0 +1,54 @@
+package com.springsecurity.eventbased.security.listener;
+
+import com.springsecurity.eventbased.respository.LoginSuccessRepository;
+import com.springsecurity.eventbased.security.LoginSuccess;
+import com.springsecurity.eventbased.security.User;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.event.EventListener;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.authentication.event.AuthenticationSuccessEvent;
+import org.springframework.security.web.authentication.WebAuthenticationDetails;
+import org.springframework.stereotype.Component;
+
+
+@Slf4j
+@RequiredArgsConstructor
+@Component
+public class AuthenticationSuccessListener {
+
+    private final LoginSuccessRepository loginSuccessRepository;
+
+    @EventListener
+    public void listen(AuthenticationSuccessEvent event){
+
+        log.info("User Logged In Okay");
+
+        if (event.getSource() instanceof UsernamePasswordAuthenticationToken) {
+            LoginSuccess.LoginSuccessBuilder builder = LoginSuccess.builder();
+
+            UsernamePasswordAuthenticationToken token = (UsernamePasswordAuthenticationToken) event.getSource();
+
+            if(token.getPrincipal() instanceof User){
+                User user = (User) token.getPrincipal();
+                builder.user(user);
+
+                log.info("User name logged in: " + user.getUsername() );
+            }
+
+            if(token.getDetails() instanceof WebAuthenticationDetails){
+                WebAuthenticationDetails details = (WebAuthenticationDetails) token.getDetails();
+
+                log.info("Source IP: " + details.getRemoteAddress());
+                builder.sourceIp(details.getRemoteAddress());
+            }
+
+            LoginSuccess loginSuccess = loginSuccessRepository.save(builder.build());
+
+            log.info("Login Success saved. Id: " + loginSuccess.getId());
+        }
+
+
+
+    }
+}
